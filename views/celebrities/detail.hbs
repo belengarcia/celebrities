@@ -1,3 +1,10 @@
 <a class="btn btn-secondary mb-3" href="/celebrities">Go Back</a>
 
 {{> celebrities/celebrity celebrity }}
+
+{{!--  añadir comments partial (index) --}}
+{{!-- añadir create comments partial (create) --}}
+<h2>Comments</h2>
+{{> comments/index  comments=celebrity.comments}}
+
+{{> comments/form }}
