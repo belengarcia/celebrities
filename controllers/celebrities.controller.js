@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Celebrity = require('../models/celebrity.model');
 
 module.exports.list = (req, res, next) => {
+  console.log('list');
   Celebrity.find()
     .then(celebrities => {
       res.render('celebrities/index', { 
@@ -16,7 +17,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.get = (req, res, next) => {
   const id = req.params.id;
-
+  console.log('detail');
   Celebrity.findById(id)
     .then(celebrity => {
       if (celebrity) {
@@ -36,7 +37,8 @@ module.exports.get = (req, res, next) => {
   });
 }
 
-module.exports.create = (req, res, next) => {
+module.exports.create = (req, res, next) => {ç
+  console.log('create');
   res.render('celebrities/create', {
     celebrity: new Celebrity()
   });
@@ -44,7 +46,7 @@ module.exports.create = (req, res, next) => {
 
 module.exports.doCreate = (req, res, next) => {
   const celebrity = new Celebrity(req.body);
-
+  console.log('doCreate');
   celebrity.save()
     .then(() => {
       res.redirect('/celebrities');

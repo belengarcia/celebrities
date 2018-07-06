@@ -8,8 +8,6 @@ const Comment = require('../models/comment.model');
 // qué cosas hacemos con un comment?
 // crear el comentario(do Create)
 
-console.log('comment controller');
-
 module.exports.doCreate = (req, res, next) => {
     console.log(req.body);
 
