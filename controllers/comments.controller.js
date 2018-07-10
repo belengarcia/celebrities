@@ -16,7 +16,7 @@ module.exports.doCreate = (req, res, next) => {
         .then( celebrity => {
             if(celebrity){
                 let comment = new Comment ({
-                    title: req.body.title,
+                    Title: req.body.Title,
                     text: req.body.text,
                     celebrity: celebrity._id
                 });
