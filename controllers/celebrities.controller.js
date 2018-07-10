@@ -37,7 +37,7 @@ module.exports.get = (req, res, next) => {
   });
 }
 
-module.exports.create = (req, res, next) => {ç
+module.exports.create = (req, res, next) => {
   console.log('create');
   res.render('celebrities/create', {
     celebrity: new Celebrity()
